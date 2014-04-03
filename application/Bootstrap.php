@@ -72,7 +72,8 @@ class Bootstrap
 		FMW\Loader\Loader::getInstance() ->loadClass( 'FMW\Router\Router',
 			array(
 				array(
-					array('^/$' => '/main/default/index/')
+					array('^/$' => '/main/default/index/'),
+					array('^/main/*/$' => '/main/default/')
 				)
 			)
 		);

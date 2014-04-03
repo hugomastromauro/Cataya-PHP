@@ -183,6 +183,7 @@ abstract class ARouter
 	private function parseRoutes() {
 		
 		$this->_urlparsed = $this->parseUrl($_SERVER['REQUEST_URI']);
+		
 		$baseurl = $this->parseUrl($this->_config->baseurl);
 		$baseurl = $baseurl['path'] != '/' ? $baseurl['path'] : '';
 		
@@ -290,22 +291,36 @@ abstract class ARouter
 	}
 
 	/**
-	 * 
-	 * @param int $index
-	 * @return multitype:
-	 */
+     * Método que retorna toda Rota
+     * @method segments
+     * @param int $index
+     * @access public
+     * @return array
+     */
 	public function segment( $index ) {
 		return $this->_segments[$index];
 	}
 
 	/**
-	 * 
-	 * @return number
-	 */
+     * Método que retorna toda Rota
+     * @method segments
+     * @access public
+     * @return array
+     */
 	public function segments() {
 		return (int) count($this->_segments)-1;
 	}
 
+	/**
+	 * Método que retorna toda Rota
+	 * @method getRoutes
+	 * @access public
+	 * @return array
+	 */
+	public function getRoutes() {
+		return $this->_routes;
+	}
+	
 	/**
      * Método que retorna toda Rota
      * @method getUri

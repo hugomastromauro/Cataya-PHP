@@ -4,7 +4,8 @@
             "bootstrap.js"
         ],
         "css": [
-            "bootstrap.css"
+            "bootstrap.css",
+            "bootstrap-theme.css"
         ]
     },
     "optional": {

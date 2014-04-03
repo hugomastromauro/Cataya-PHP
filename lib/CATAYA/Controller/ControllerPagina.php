@@ -94,6 +94,7 @@ class ControllerPagina
 		/*
 		 * Redireciona para a página 404 caso não exista!
 		 */
-		$this->http->redirect('404');
+		echo 'configurar a página 404!';
+		
 	}
 }

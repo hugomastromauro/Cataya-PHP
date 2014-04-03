@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Configuração principais
+ * 
+ */
+
 /*
  * Versão da aplicação
  * 
@@ -10,7 +15,7 @@ $config['version'] = '3.0';
  * 
  * Nome da sua aplicação
  */
-$config['appname'] = 'Project Name';
+$config['appname'] = 'Projeto Exemplo';
 
 /*
  * Caractere que separa o título
@@ -30,7 +35,7 @@ $config['appmode'] = 'development';
  * 
  */
 $config['apppath'] = realpath(dirname(__FILE__) . '/../');
-$config['baseurl'] = 'http://cataya.local/';
+$config['baseurl'] = 'http://catayaphp.local/';
 $config['namespaceseparator'] = '\\';
 
 /*

@@ -26,9 +26,12 @@ class ControllerDefault
 		
 		parent::init();
 		
+		//\FMW\Utilities\Debugger\Tracking::start();
+		
 		$this->assets->loadPlugin( array( 'jquery', 'bootstrap' ) );
 		
-		$this->setTitleCh( 'Pagina exemplo' );
+		$this->assets->setCss( 'website', array( 'app.css' ) );
+		$this->assets->setJavascript( 'website', array( 'app.js' ) );
 	}
 	
 	/**
@@ -40,7 +43,67 @@ class ControllerDefault
      */
 	public function indexAction( array $params ) {
 		
+		$this->setTitleCh( 'Home' );
+		
 		$this->view->layout('home');
+	}
+	
+	/**
+	 * 
+	 * @method servicosAction
+	 * @param array $params
+	 * @access public
+	 * @return void
+	 */
+	public function servicosAction( array $params ) {
+		
+		$this->setTitleCh( 'Serviços' );
+		
+		$this->view->layout('servicos');
+	}
+	
+	/**
+	 *
+	 * @method contatoAction
+	 * @param array $params
+	 * @access public
+	 * @return void
+	 */
+	public function contatoAction( array $params ) {
+		
+		$this->setTitleCh( 'Contato' );
+		
+		$this->view->layout('contato');
+	}
+	
+	/**
+	 *
+	 * @method sobreAction
+	 * @param array $params
+	 * @access public
+	 * @return void
+	 */
+	public function sobreAction( array $params ) {
+	
+		$this->setTitleCh( 'sobre' );
+	
+		$this->view->layout('quem-somos');
+	}
+	
+	/**
+	 *
+	 * Página 404
+	 * 
+	 * @method errorAction
+	 * @param array $params
+	 * @access public
+	 * @return void
+	 */
+	public function errorAction( array $params ) {
+	
+		$this->setTitleCh( '404' );
+	
+		$this->view->layout('404');
 	}
 	
 	/**
