@@ -1,0 +1,14 @@
+{
+    "dependencies": {
+        "js": [
+            "bootstrap.js"
+        ],
+        "css": [
+            "bootstrap.css"
+        ]
+    },
+    "optional": {
+        "js": {},
+        "css": {}
+    }
+}
