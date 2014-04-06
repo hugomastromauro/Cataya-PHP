@@ -7,48 +7,44 @@ namespace FMW\Events;
  * Class EventBinding
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0 
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Events 
+ * @subpackage FMW
  *  
  */ 
 class EventBinding {
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @var object
+	 * @var Object
 	 */
 	private $oObj;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
 	private $sMethod;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
 	private $sClass;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var array
 	 */
 	private $sArgs;
 	
 	/**
-	 * Constructor
-	 * @param object &$oObj the object on which we wish to call a method, passed by referenct
+	 * 
+	 * @param Object $oObj
 	 * @param string $sClass
-	 * @param string $sMethod the method to call
+	 * @param string $sMethod
 	 * @param array $sArgs
 	 */
 	public function __construct(&$oObj, $sClass, $sMethod, $sArgs = array()) {
@@ -59,8 +55,9 @@ class EventBinding {
 	}
 	
 	/**
-	 * Trigger the event
-	 * @param $aArgs an array of arguments for the bound function
+	 * 
+	 * @param array $aArgs
+	 * @return mixed
 	 */
 	public function trigger($aArgs = array()) {
 		$aArgs = empty($aArgs) ? $this->sArgs : $aArgs;
@@ -68,8 +65,7 @@ class EventBinding {
 	}
 	
 	/**
-	 * Método que retorna o objeto atual
-	 * @access public
+	 * 
 	 * @return object
 	 */
 	public function getObj(){
@@ -77,8 +73,7 @@ class EventBinding {
 	}
 	
 	/**
-	 * Método que retorna o método do objeto atual
-	 * @access public
+	 * 
 	 * @return string
 	 */
 	public function getMethod(){
@@ -86,9 +81,7 @@ class EventBinding {
 	}
 	
 	/**
-	 *
-	 * Método que retorna o nome da classe
-	 * @access public
+	 * 
 	 * @return string
 	 */
 	public function getClass() {

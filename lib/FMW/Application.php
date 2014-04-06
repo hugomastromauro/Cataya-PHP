@@ -4,11 +4,11 @@ namespace FMW;
 
 /**
  *
- * Class Application
+ * Classe Application
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
  * @package FMW
  * @subpackage lib
@@ -72,6 +72,7 @@ class Application {
 
 	/**
 	 * Método que instância o bootstrap atual
+	 * 
 	 * @access public
 	 * @return \FMW\FMW\Application\Bootstrap\Abstract
 	 */
@@ -96,6 +97,7 @@ class Application {
 
 	/**
 	 * Método que verifica se a aplicação está rodando em ambiente linux ou não
+	 * 
 	 * @access public 
 	 * @return boolean
 	 */
@@ -110,6 +112,7 @@ class Application {
 
 	/**
 	 * Método que retorna as configurações
+	 * 
 	 * @access public
 	 * @return FMW_Config
 	 */
@@ -119,6 +122,7 @@ class Application {
 	
 	/**
 	 * Método que retorna o bootstrap da aplicação
+	 * 
 	 * @access public
 	 * @return \FMW\FMW\Application\Bootstrap\Abstract
 	 */

@@ -6,23 +6,22 @@ use FMW\Utilities\Filters\Filter;
 
 /**
  *
- * Class Request
+ * Classe Request
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Request
+ * @subpackage Application
  *
  */
 class Request
 	extends \FMW\Object {
 
 	/**
-	 *
-	 * Enter description here ...
-	 * @var string
+	 * 
+	 * @var \FMW\Utilities\Filters\Filter
 	 */
 	private $filter;
 	
@@ -33,8 +32,7 @@ class Request
 	private $headers;
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @param array $request
 	 */
 	public function __construct( array $request ) {

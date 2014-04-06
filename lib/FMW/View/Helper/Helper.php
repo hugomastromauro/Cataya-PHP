@@ -6,14 +6,14 @@ use FMW\Utilities\String\String;
 
 /** 
  * 
- * Class Helper
+ * Classe Helper
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Helper 
+ * @subpackage View
  *  
  */ 
 class Helper
@@ -55,11 +55,9 @@ class Helper
 	}
 	
 	/**
-	 * Return base asset by module
-	 * 
-	 * $this->helper->getBaseasset('main');
 	 * 
 	 * @param string $module
+	 * @return string
 	 */
 	public function getBaseasset( $module ) {
 		
@@ -69,6 +67,7 @@ class Helper
 	
 	/**
 	 * 
+	 * @return string
 	 */
 	public function meta() {
 		
@@ -86,8 +85,8 @@ class Helper
 	/**
 	 * 
 	 * @param string $command
-	 * @param array $params
-	 * @return string|Ambigous <\FMW\Router\number, number>|\FMW\Router\multitype:|multitype:
+	 * @param string $params
+	 * @return Ambigous <\FMW\Router\multitype:, multitype:>|mixed|number|string
 	 */
 	public function router( $command, $params = null ) {
 		

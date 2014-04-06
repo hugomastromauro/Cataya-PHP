@@ -4,7 +4,7 @@ namespace FMW\Application\Frontcontroller\Plugins;
 
 /** 
  * 
- * Abstract Class Plugin
+ * Classe Abastrata Plugin
  * 
  * $teste = array(
  *
@@ -16,18 +16,18 @@ namespace FMW\Application\Frontcontroller\Plugins;
  *	$this->front->setPlugin( $teste );
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Plugins 
+ * @subpackage Frontcontroller
  *  
  */ 
 abstract class APlugin	
 	implements \FMW\Application\Frontcontroller\Plugins\IPlugin {
 	
-	public function __construct() {
-		
-		
-	}	
+	/**
+	 * 
+	 */
+	public function __construct() {}	
 }

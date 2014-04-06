@@ -4,20 +4,21 @@ namespace FMW\Controller;
 
 /** 
  * 
- * Interface Class Controller
+ * Interface de Classe Controller
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Controller 
+ * @subpackage FMW
  *  
  */ 
 interface IController {	
 	
 	/** 
      * Construtor do controller
+     * 
      * @method init
      * @param array $pagina
      * @access public     
@@ -27,6 +28,7 @@ interface IController {
 	
 	/** 
      * Ação principal
+     * 
      * @method indexAction
      * @param array $pagina
      * @access public     
@@ -36,6 +38,7 @@ interface IController {
 
 	/** 
      * Pré ação do controller
+     * 
      * @method preActionEvent
      * @param array $pagina
      * @access public     
@@ -45,6 +48,7 @@ interface IController {
 	
 	/** 
      * Pós ação do controller
+     * 
      * @method posActionEvent
      * @param array $pagina
      * @access public     
@@ -54,6 +58,7 @@ interface IController {
 	
 	/** 
      * Metodo padrão de retorno de erro
+     * 
      * @method errorAction
      * @param array $pagina
      * @access public     

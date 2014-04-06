@@ -4,21 +4,20 @@ namespace FMW\View;
 
 /** 
  * 
- * Interface Class IView
+ * Interface de Classe IView
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package View 
+ * @subpackage FMW
  *  
  */  
 interface IView {	
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param \FMW\Application\Frontcontroller\Frontcontroller $front
 	 */
 	public function __construct( \FMW\Application\Frontcontroller\Frontcontroller $front );

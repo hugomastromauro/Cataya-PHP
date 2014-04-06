@@ -6,14 +6,14 @@ use FMW\Utilities\Filters\Filter;
 
 /**
  *
- * Abstract Class ARouter
+ * Classe Abstrata ARouter
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Router
+ * @subpackage FMW
  *
  */
 abstract class ARouter
@@ -21,63 +21,51 @@ abstract class ARouter
 			
 	/**
 	 * 
-	 * Enter description here ...
-	 * @var unknown_type
+	 * @var \FMW\Utilities\Filters\Filter
 	 */
 	private $_filter;
 
 	/**
-     * Container de array que guarda os controllers da url
-     * @access private
-     * @name $uri
-     * @var array
-     */
+	 * 
+	 * @var array
+	 */
 	private $_uri = array ('module' => '', 'controller' => '', 'method' => '', 'params' => array());
 
 	/**
-     * Variável que carrega as configurações
-     * @access private
-     * @name $config
-     * @var object
-     */
+	 * 
+	 * @var \FMW\Config
+	 */
 	private $_config;
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @var array
 	 */
 	private $_query = array();
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @var array
 	 */
 	private $_routes = array();
 
 	/**
 	 *
-	 * Enter description here ...
 	 * @var array
 	 */
 	private $_segments = array();
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var array
 	 */
 	private $_urlparsed = array();
 
 
 	/**
-     * Construtor da classe
-     * @method __construct
-     * @access public
-     * @param array $params
-     * @return void
-     */
+	 * 
+	 * @param array $params
+	 */
 	public function __construct( array $params = array() ) {
 
 		$this->_filter = new Filter();
@@ -89,10 +77,7 @@ abstract class ARouter
 	}
 
 	/**
-	 *
-	 * @method route
-	 * @access public
-	 * @return void
+	 * 
 	 */
 	public function route() {
 
@@ -164,10 +149,8 @@ abstract class ARouter
 	}
 
 	/**
-	 * @method setRoutes
-	 * @access public
+	 * 
 	 * @param array $array
-	 * @return void
 	 */
 	public function setRoutes( array $array ) {
 
@@ -175,10 +158,8 @@ abstract class ARouter
 	}
 
 	/**
-	 * Método que gera rotas fixas para os controllers
-	 * @method parseRoutes
-	 * @access public
-	 * return string
+	 * 
+	 * @return mixed|Ambigous <string, mixed>
 	 */
 	private function parseRoutes() {
 		
@@ -210,10 +191,10 @@ abstract class ARouter
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $url
-	 * @param bool $retempty
-	 * @param bool $parsequery
+	 * @param string $retempty
+	 * @param string $parsequery
+	 * @return multitype:
 	 */
 	private function parseUrl($url, $retempty = TRUE, $parsequery = FALSE) {
 		
@@ -270,10 +251,7 @@ abstract class ARouter
 	}
 
 	/**
-	 * Método que trata os parâmetros
-	 * @method parseQuery
-	 * @access private
-	 * @return void
+	 * 
 	 */
 	private function parseQuery() {
 
@@ -291,51 +269,41 @@ abstract class ARouter
 	}
 
 	/**
-     * Método que retorna toda Rota
-     * @method segments
-     * @param int $index
-     * @access public
-     * @return array
-     */
+	 * 
+	 * @param int $index
+	 * @return multitype:
+	 */
 	public function segment( $index ) {
 		return $this->_segments[$index];
 	}
 
 	/**
-     * Método que retorna toda Rota
-     * @method segments
-     * @access public
-     * @return array
-     */
+	 * 
+	 * @return number
+	 */
 	public function segments() {
 		return (int) count($this->_segments)-1;
 	}
 
 	/**
-	 * Método que retorna toda Rota
-	 * @method getRoutes
-	 * @access public
-	 * @return array
+	 * 
+	 * @return multitype:
 	 */
 	public function getRoutes() {
 		return $this->_routes;
 	}
 	
 	/**
-     * Método que retorna toda Rota
-     * @method getUri
-     * @access public
-     * @return array
-     */
+	 * 
+	 * @return multitype:
+	 */
 	public function getUri() {
 		return $this->_uri;
 	}
 	
 	/**
-	 * Método que retorna toda Rota
-	 * @method getFullUrl
-	 * @access public
-	 * @return array
+	 * 
+	 * @return string
 	 */
 	public function getFullUrl() {
 		return preg_replace('/controller/', '', $this->_uri['controller']) . 
@@ -344,105 +312,80 @@ abstract class ARouter
 	}
 
 	/**
-	 *
-	 * Enter description here ...
-	 * @method setModule
+	 * 
 	 * @param string $value
-	 * @return void
 	 */
 	public function setModule( $value ) {
 		$this->_uri['module'] = $value;
 	}
 
 	/**
-     * Método que retorna o caminho do controller
-     * @method getModule
-     * @access public
-     * @return string
-     */
+	 * 
+	 * @return multitype:
+	 */
 	public function getModule(){
 		return $this->_uri['module'];
 	}
 
 	/**
-	 *
-	 * Enter description here ...
-	 * @method setMethod
-	 * @param string $method
-	 * @return void
+	 * 
+	 * @param string $value
 	 */
 	public function setMethod( $value ) {
 		$this->_uri['method'] = $value;
 	}
 
 	/**
-     * Método que retorna o metodo
-     * @method getMethod
-     * @access public
-     * @return string
-     */
+	 * 
+	 * @return multitype:
+	 */
 	public function getMethod(){
 		return $this->_uri['method'];
 	}
 
 	/**
-	 *
-	 * Enter description here ...
-	 * @method setController
+	 * 
 	 * @param string $value
-	 * @return void
 	 */
 	public function setController( $value ) {
 		$this->_uri['controller'] = $value;
 	}
 
 	/**
-     * Método que retorna o controller atual
-     * @method getController
-     * @access public
-     * @return string
-     */
+	 * 
+	 * @return multitype:
+	 */
 	public function getController() {
 		return $this->_uri['controller'];
 	}
 
 	/**
-	 *
-	 * Enter description here ...
-	 * @method setParams
+	 * 
 	 * @param array $value
-	 * @return void
 	 */
 	public function setParams( array $value ) {
 		$this->_uri['params'] = $value;
 	}
 
 	/**
-     * Método que retorna parâmetros do controller
-     * @method getParams
-     * @access public
-     * @return array
-     */
+	 * 
+	 * @return multitype:
+	 */
 	public function getParams() {
 		return $this->_uri['params'];
 	}
 	
 	/**
-	 * Método que retorna parâmetros do controller
-	 * @method getParam
+	 * 
 	 * @param int $index
-	 * @access public
-	 * @return string
 	 */
 	public function getParam( $index ) {
 		return $this->_uri['params'][$index];
 	}
 
 	/**
-	 * Método que retorna as QueryStrings
-	 * @method getQuerystring
-	 * @access public
-	 * @return array
+	 * 
+	 * @return multitype:
 	 */
 	public function getQuerystring() {
 		return $this->_query;

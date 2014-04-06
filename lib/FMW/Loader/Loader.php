@@ -9,36 +9,31 @@ use ReflectionClass;
  * Classe Loader
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Loader 
+ * @subpackage FMW
  *  
  */ 
 class Loader {
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @var FMW\Loader
+	 * @var string
 	 */
 	protected static $_instance;
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @var object
+	 * @var array
 	 */
-	protected $_class = array ();
+	protected $_class = array();
        	
-	/** 
-     * Método Singleton
-     * 
-     * @static
-     * @access public     
-     * @return object 
-     */
+	/**
+	 * 
+	 * @return string
+	 */
 	public static function getInstance() {
 		
 		if (null === self::$_instance) {
@@ -48,14 +43,12 @@ class Loader {
         return self::$_instance;
 	}	
 	
-	/** 
-     * Método para carregar e instânciar classes
-     * 
-     * @access public
-     * @param string $class
-     * @param array $params     
-     * @return void 
-     */
+	/**
+	 * 
+	 * @param string $class
+	 * @param array $params
+	 * @return multitype:
+	 */
 	public function loadClass( $class, $params = array() ) {				
 		
 		if ( class_exists ( $class ) ) 
@@ -83,13 +76,11 @@ class Loader {
 		}
 	}
 	
-	/** 
-     * Método que retorna classes carregadas
-     * 
-     * @access public
-     * @param string $className     
-     * @return object 
-     */
+	/**
+	 * 
+	 * @param string $class
+	 * @return multitype:
+	 */
 	public function getClass( $class ) {
 		
 		return $this->_class [$class];

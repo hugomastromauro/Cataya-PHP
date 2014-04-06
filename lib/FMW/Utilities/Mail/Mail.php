@@ -6,14 +6,14 @@ use FMW\Utilities\Template\Template;
 
 /** 
  * 
- * Class Mail
+ * Classe Mail
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Mail 
+ * @subpackage Utilities
  *  
  */ 
 class Mail 
@@ -21,92 +21,80 @@ class Mail
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
 	private $_to;
 
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
     private $_cc;
 
     /**
      * 
-     * Enter description here ...
      * @var string
      */
     private $_bcc; 
     
     /**
      * 
-     * Enter description here ...
      * @var string
      */
     private $_subject;
 
     /**
      * 
-     * Enter description here ...
      * @var string
      */
     private $_from; 
     
     /**
      * 
-     * Enter description here ...
      * @var string
      */
     private $_headers; 
     
     /**
      * 
-     * Enter description here ...
      * @var bool
      */
     private $_file = false;
     
     /**
      * 
-     * Enter description here ...
      * @var bool
      */
     private $_html = false;
     
     /**
      * 
-     * Enter description here ...
      * @var string
      */
     private $_files = array();
     
     /**
      * 
-     * Enter description here ...
      * @var string
      */
     private $_body;
     
     /**
      * 
-     * Enter description here ...
      * @var string
      */
     private $_template;
 
     /**
      * 
-     * Enter description here ...
      * @var string
      */
     private $_mime;
 	
     /**
      * 
-     * Enter description here ...
      * @param array $params
+     * @throws Exception
      */
     public function __construct( array $params ) 
     {
@@ -135,10 +123,9 @@ class Mail
     		$this->setFiles();
     }
     
-    /**
-     * 
-     * Enter description here ...
-     */
+   /**
+    * 
+    */
     public function setHeaders()  
     {  
     	$this->_headers = "From: {$this->_from}\r\n"; 
@@ -162,7 +149,6 @@ class Mail
     
     /**
      * 
-     * Enter description here ...
      */
     private function setBody() {
     	
@@ -204,13 +190,13 @@ class Mail
 		}
     }
 	
-    /**
-     * 
-     * Enter description here ...
-     * @param string $email
-     */
-    private function checkEmail( $email ) 
-    {
+	/**
+	 * 
+	 * @param string $email
+	 * @return boolean
+	 */
+	private function checkEmail( $email ) {
+    	
     	if ( ! filter_var( $email, FILTER_VALIDATE_EMAIL ) )
 			return false;
 					
@@ -219,8 +205,8 @@ class Mail
     
     /**
      * 
-     * Enter description here ...
-     * @param string $files
+     * @param string $file
+     * @return boolean
      */
     private function checkFile( $file ) {
     	
@@ -232,7 +218,7 @@ class Mail
 	
     /**
      * 
-     * Enter description here ...
+     * @return boolean
      */
     public function send()  
     { 

@@ -10,7 +10,7 @@ use Exception;
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
  * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
  * @package FMW 
  * @subpackage lib

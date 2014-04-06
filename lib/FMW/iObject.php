@@ -2,12 +2,23 @@
 
 namespace FMW;
 
-
+/**
+ *
+ * Interface iObject
+ *
+ * @author Hugo Mastromauro <hugomastromauro@gmail.com>
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
+ * @access public
+ * @package FMW
+ * @subpackage lib
+ *
+ */
 interface iObject
 {
     /**
      * 
-     * Enter description here ...
+     * 
      * @param $string $name
      * @param array $arguments
      */
@@ -15,7 +26,7 @@ interface iObject
     
     /**
      * 
-     * Enter description here ...
+     * 
      * @param string $key
      */
     public function stack($key = NULL);

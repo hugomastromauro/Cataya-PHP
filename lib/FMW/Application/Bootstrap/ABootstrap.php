@@ -7,11 +7,11 @@ namespace FMW\Application\Bootstrap;
  * Classe Abstrata ABootstrap
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Bootstrap 
+ * @subpackage Application
  *  
  */ 
 abstract class ABootstrap 
@@ -20,18 +20,13 @@ abstract class ABootstrap
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @var FMW\Application
+	 * @var \FMW\Application
 	 */
 	protected $app;	
 	
 	/**
-	 * Método contrutor da Classe Bootstrap
 	 * 
-	 * @method __construct
-	 * @access public
-	 * @param FMW_Application $app
-	 * @return void
+	 * @param \FMW\Application $app
 	 */
 	public function __construct( \FMW\Application $app ) {
 		
@@ -47,11 +42,8 @@ abstract class ABootstrap
 	}
 
 	/**
-	 * Método que inicializa a aplicação
-	 * 
-	 * @method run
-	 * @access public
-	 * @return void
+	 * (non-PHPdoc)
+	 * @see \FMW\Application\Bootstrap\IBootstrap::run()
 	 */
 	public function run() {			
 		
@@ -73,11 +65,8 @@ abstract class ABootstrap
 	}
 	
 	/**
-	 * Método que inicializa e confirma as configurações.
 	 * 
-	 * @method initConfirmSettings
-	 * @access public
-	 * return void
+	 * @throws \FMW\Application\Bootstrap\Exception
 	 */
 	public function initConfirmSettings() {
 				

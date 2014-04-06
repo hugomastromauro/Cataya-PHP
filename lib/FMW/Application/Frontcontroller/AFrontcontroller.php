@@ -7,14 +7,14 @@ use FMW\Application\Frontcontroller\Plugins\APlugin,
 
 /**
  *
- * Abstract Class AFrontcontroller
+ * Classe Abstrata AFrontcontroller
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Frontcontroller
+ * @subpackage Application
  *
  */
 abstract class AFrontcontroller
@@ -22,61 +22,50 @@ abstract class AFrontcontroller
 		implements \FMW\Application\Frontcontroller\IFrontcontroller {
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @var \FMW\Application
 	 */
 	protected $app;
 
 	/**
 	 *
-	 * Enter description here ...
 	 * @var \FMW\Application\Controller
 	 */
 	protected $class;
 
 	/**
 	 *
-	 * Enter description here ...
 	 * @var \FMW\Router\Router
 	 */
 	protected $router;
 
 	/**
 	 *
-	 * Enter description here ...
 	 * @var \FMW\View\View
 	 */
 	protected $view;
 
 	/**
 	 *
-	 * Enter description here ...
 	 * @var \FMW\Application\Request\Request
 	 */
 	protected $request;
 
 	/**
 	 *
-	 * Enter description here ...
 	 * @var string
 	 */
 	protected $controller;
 
 	/**
 	 *
-	 * Enter description here ...
 	 * @var \FMW\Utilities\Session\Session
 	 */
 	protected $session;
 
 	/**
-	 * Método controutor para instância do controller
-	 *
-	 * @method __construct
-	 * @access public
-	 * @param FMW\Application $app
-	 * @return void
+	 * 
+	 * @param \FMW\Application $app
 	 */
 	public function __construct( \FMW\Application $app ) {
 
@@ -101,12 +90,9 @@ abstract class AFrontcontroller
 	}
 	
 	/**
-     * Método que chama o controller
-     *
-     * @method callController
-     * @access public
-     * @return void
-     */
+	 * (non-PHPdoc)
+	 * @see \FMW\Application\Frontcontroller\IFrontcontroller::callController()
+	 */
 	public function callController() {
 		
 		$controller = $this ->controller .
@@ -198,67 +184,48 @@ abstract class AFrontcontroller
 	}
 
 	/**
-	 * Método que retorna a classe view
-	 *
-	 * @method getView
-	 * @access public
-	 * @return FMW\View\View
+	 * 
+	 * @return \FMW\View\View
 	 */
 	public function getView() {
 		return $this->view;
 	}
 
 	/**
-	 * Método que retorna a classe view
-	 *
-	 * @method getRequest
-	 * @access public
-	 * @return FMW\Application\Request\Request
+	 * 
+	 * @return \FMW\Application\Request\Request
 	 */
 	public function getRequest() {
 		return $this->request;
 	}
 
 	/**
-	 * Método que retorna a classe FMW\Application
-	 *
-	 * @method getApp
-	 * @access public
-	 * @return FMW\Application
+	 * 
+	 * @return \FMW\Application
 	 */
 	public function getApp() {
 		return $this->app;
 	}
 
 	/**
-	 * Método que retorna a classe FMW\Router
-	 *
-	 * @method getRouter
-	 * @access public
-	 * @return FMW\Router
+	 * 
+	 * @return \FMW\Router\Router
 	 */
 	public function getRouter() {
 		return $this->router;
 	}
 
 	/**
-	 * Método que retorna a classe FMW\Utilities\Session\Session
-	 *
-	 * @method getSession
-	 * @access public
-	 * @return FMW\Utilities\Session\Session
+	 * 
+	 * @return \FMW\Utilities\Session\Session
 	 */
 	public function getSession() {
 		return $this->session;
 	}
 
 	/**
-	 *
-	 * Enter description here ...
-	 *
-	 * @method setPlugin
-	 * @access public
-	 * @return FMW\Applications\Frontcontroller\Plugins\Plugin
+	 * 
+	 * @param array $plugin
 	 */
 	public function setPlugin( Array $plugin ) {
 

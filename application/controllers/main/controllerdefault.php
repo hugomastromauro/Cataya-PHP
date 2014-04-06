@@ -44,7 +44,7 @@ class ControllerDefault
 	public function indexAction( array $params ) {
 		
 		$this->setTitleCh( 'Home' );
-		
+				
 		$this->view->layout('home');
 	}
 	

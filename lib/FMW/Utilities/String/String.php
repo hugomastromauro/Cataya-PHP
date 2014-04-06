@@ -4,14 +4,14 @@ namespace FMW\Utilities\String;
 
 /** 
  * 
- * Class Session
+ * Classe String
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package String 
+ * @subpackage Utilities
  *  
  */  
 class String
@@ -19,10 +19,10 @@ class String
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $text
-	 * @param int $length
+	 * @param number $length
 	 * @param string $tail
+	 * @return string
 	 */
 	public static function snippet($text, $length=64, $tail="...") {
 
@@ -42,10 +42,10 @@ class String
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $text
-	 * @param int $length
+	 * @param number $length
 	 * @param string $tail
+	 * @return string
 	 */
 	public static function snippetgreedy($text, $length=64, $tail="...") {
 	    $text = trim($text);
@@ -62,10 +62,10 @@ class String
 
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $text
-	 * @param int $length
+	 * @param number $length
 	 * @param string $tail
+	 * @return string
 	 */
 	public static function snippetwop($text, $length=64, $tail="...") {
 		
@@ -84,9 +84,10 @@ class String
 	}
 	
 	/**
-	 * Este é o correto!
-	 * Remover acentos
+	 * 
 	 * @param string $string
+	 * @param string $enc
+	 * @return string
 	 */
 	public static function normalize($string, $enc = "UTF-8") {
 		
@@ -108,8 +109,9 @@ class String
 	
 	/**
 	 * 
-	 * Redefinir string para url
 	 * @param string $string
+	 * @param string $enc
+	 * @return mixed
 	 */
 	public static function seo($string, $enc = "UTF-8") {
 		    	    	

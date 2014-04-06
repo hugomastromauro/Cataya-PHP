@@ -7,75 +7,69 @@ use FMW\Utilities\Cache\FileCache,
 
 /**
  *
- * Class Assets
+ * Classe Assets
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Plugins
+ * @subpackage Frontcontroller
  *
  */
 class Assets
 	extends \FMW\Application\Frontcontroller\Plugins\APlugin {
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @var string
 	 */
 	private $_baseasset;
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @var string
 	 */
 	private $_baseurl;
 	
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @var string
 	 */
 	private $_base;
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @var array
 	 */
 	private $_css = Array();
 	
 	/**
-	 * Enter description here ...
+	 * 
 	 * @var array
 	 */
 	private $_cssCache = Array();
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @var array
 	 */
 	private $_javascript = Array();
 	
 	/**
-	 * Enter description here ...
+	 * 
 	 * @var array
 	 */
 	private $_javascriptCache = Array();
 	
 	/**
-	 * Enter description here ...
+	 * 
 	 * @var array
 	 */
 	private $_javascriptHttp = Array();
 	
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @var array
 	 */
 	private $_plugins = Array();
@@ -118,7 +112,7 @@ class Assets
 	 * @param string $name
 	 * @param array $values
 	 * @param string $media
-	 * @param bool $baseasset
+	 * @param string $baseasset
 	 */
 	public function setCss( $name, array $values, $media = 'all', $baseasset = false ) {
 		

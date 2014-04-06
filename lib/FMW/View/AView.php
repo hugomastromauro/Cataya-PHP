@@ -6,14 +6,14 @@ use FMW\Utilities\File\Util;
 
 /** 
  * 
- * Abstract Class AView
+ * Classe Abstrata AView
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2010, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package View 
+ * @subpackage FMW
  *  
  */ 
 abstract class AView
@@ -22,59 +22,50 @@ abstract class AView
 			
 	/**
 	 * 
-	 * Enter description here ...
-	 * @var FMW_Application_Frontcontroller_Frontcontroller
+	 * @var \FMW\Application\Frontcontroller\Frontcontroller 
 	 */
 	protected $front;
 		
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var array
 	 */
 	protected $helpers = array();
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
 	private $_path;
 		
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var array
 	 */
 	private $_layout = array( 'key' => null, 'params' => null );
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var array
 	 */
 	private $_partial = array();
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var array
 	 */
 	private $_templates = array();
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var \FMW\Utilities\Cache\ACache
 	 */
 	private $_cache;
 	
-	/** 
-     * Construtor da classe
-     * @access public 
-     * @param array $params   
-     * @return void 
-     */ 
+	/**
+	 * 
+	 * @param \FMW\Application\Frontcontroller\Frontcontroller $front
+	 */
 	public function __construct( \FMW\Application\Frontcontroller\Frontcontroller $front ) {
 		
 		parent::__construct();
@@ -85,7 +76,6 @@ abstract class AView
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $name
 	 * @param mixed $value
 	 */
@@ -96,10 +86,10 @@ abstract class AView
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $key
 	 * @param array $params
-	 */ 	
+	 * @param array $templates
+	 */
 	public function layout( $key, array $params = null, array $templates = null ) {
 
 		$this->_layout['key'] = $key;
@@ -109,8 +99,7 @@ abstract class AView
 	}
 	
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @param string $key
 	 * @param array $params
 	 */
@@ -138,7 +127,6 @@ abstract class AView
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $key
 	 * @param array $params
 	 */
@@ -154,7 +142,6 @@ abstract class AView
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $key
 	 * @param array $params
 	 */
@@ -258,8 +245,8 @@ abstract class AView
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @param \FMW\Utilities\ACache $cache
+	 * @param \FMW\Utilities\Cache\ACache $cache
+	 * @throws Exception
 	 */
 	public function setCache( $cache ) {
 		
@@ -272,8 +259,8 @@ abstract class AView
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $key
+	 * @return boolean
 	 */
 	public function isCached( $key ) {
 		
@@ -285,7 +272,6 @@ abstract class AView
 		
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $path
 	 */
 	public function setPath( $path ) {
@@ -296,6 +282,7 @@ abstract class AView
 	/**
 	 * 
 	 * @param string $name
+	 * @return multitype:
 	 */
 	public function getHelper( $name ) {
 		return $this->helpers[$name];
@@ -303,9 +290,9 @@ abstract class AView
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $name
-	 * @param \FMW\View\Helper $helper
+	 * @param \FMW\View\Helper\AHelper $helper
+	 * @throws Exception
 	 */
 	public function setHelper( $name, $helper ) {
 		
@@ -318,7 +305,6 @@ abstract class AView
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 */
 	private function assignHelpers() {
 		

@@ -4,14 +4,14 @@ namespace FMW\View\Helper;
 
 /** 
  * 
- * Abstract Class AHelper
+ * Classe Abstrata AHelper
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Helper 
+ * @subpackage View
  *  
  */ 
 abstract class AHelper
@@ -20,41 +20,37 @@ abstract class AHelper
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var \FMW\Config
 	 */
 	protected $_config;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var \FMW\View\View
 	 */
 	protected $_view;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var \FMW\Router\Router
 	 */
 	protected $_router;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var \FMW\Utilities\Array\Array
 	 */
 	protected $_array;
 	
 	/**
 	 * 
-	 * @var \FMW\Utilities\Array\Array
+	 * @var array
 	 */
 	protected $_params;
 		
 	/**
 	 * 
-	 * Enter description here ...
+	 * @param array $params
 	 */
 	public function __construct( array $params = null ) {
 		

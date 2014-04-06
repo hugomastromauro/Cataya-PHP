@@ -67,7 +67,7 @@ $cli->addCommands(array(
     new \Doctrine\ORM\Tools\Console\Command\RunDqlCommand(),
     new \Doctrine\ORM\Tools\Console\Command\ValidateSchemaCommand(),
 		
-	// Catia Application Commands
+	// Cataya Application Commands
 	new \FMW\Utilities\Console\Application()
 
 ));

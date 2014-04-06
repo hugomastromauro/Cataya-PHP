@@ -4,14 +4,14 @@ namespace FMW\Events;
 
 /** 
  * 
- * Class Exception
+ * Classe Exception
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Events 
+ * @subpackage FMW
  *  
  */ 
 class Exception extends \FMW\CoreException {}

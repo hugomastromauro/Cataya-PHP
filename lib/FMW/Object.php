@@ -7,14 +7,14 @@ use Countable,
 
 /** 
  * 
- * Classe Config
+ * Classe Object
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, Hugo Mastromauro. 
+ * @version 2.0 
+ * @copyright  GPL © 2014, Hugo Mastromauro. 
  * @access public  
  * @package FMW 
- * @subpackage controllers
+ * @subpackage lib
  *  
  */ 	
 class Object 
@@ -105,11 +105,11 @@ class Object
     }
 	
 	/**
-     *
-     * @param string $name
-     * @param mixed $default
-     * @return mixed
-     */
+	 * 
+	 * @param string $name
+	 * @param string $default
+	 * @return Ambigous <string, multitype:>
+	 */
     public function get($name, $default = null) {
     	
         $result = $default;
@@ -121,7 +121,7 @@ class Object
     
     /**
      * 
-     * Enter description here ...
+     * @return multitype:
      */
     public function getAll() {
     	
@@ -129,9 +129,9 @@ class Object
     }
 
     /**
-     *
+     * 
      * @param string $name
-     * @return mixed
+     * @return Ambigous <\FMW\Ambigous, string, multitype:>
      */
     public function __get($name) {
     	    	

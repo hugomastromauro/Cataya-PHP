@@ -9,11 +9,11 @@ use FMW\Utilities\Session\Session;
  * Classe ControllerPagina
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, Hugo Mastromauro da Silva.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package ELEVE
- * @subpackage controllers
+ * @package Controller
+ * @subpackage CATAYA
  *
  */
 class ControllerPagina
@@ -21,7 +21,7 @@ class ControllerPagina
 	
 	/**
 	 * 
-	 * @var mixed
+	 * @var \FMW\Utilities\Session\Session
 	 */
 	protected $session;
 	
@@ -32,11 +32,9 @@ class ControllerPagina
 	protected $layout;
 
 	/**
-     * Construtor padrão do controller
-     * @method init
-     * @access public
-     * @return void
-     */
+	 * (non-PHPdoc)
+	 * @see \FMW\Controller\AController::init()
+	 */
 	public function init () {
 				
 		/*
@@ -58,8 +56,6 @@ class ControllerPagina
 	
 	/**
 	 * 
-	 * Setando layout da página
-	 * 
 	 * @param string $layout
 	 */
 	protected function setLayout( $layout ) {
@@ -67,10 +63,8 @@ class ControllerPagina
 	}
 	
 	/**
-	 * 
-	 * Sobrescrevendo o metodo postActionEvent para renderizar o layout certo.
 	 * (non-PHPdoc)
-	 * @see FMW\Controller.AController::postActionEvent()
+	 * @see \FMW\Controller\AController::postActionEvent()
 	 */
 	public function postActionEvent( array $params ){
 		
@@ -79,9 +73,6 @@ class ControllerPagina
 		
 		parent::postActionEvent($params);
 		
-		/*
-		 * Verificar o tempo de execução da página
-		 */
 		\FMW\Utilities\Debugger\Tracking::end();
 	}
 

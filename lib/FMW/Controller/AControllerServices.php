@@ -4,14 +4,14 @@ namespace FMW\Controller;
 
 /** 
  * 
- * Abstract Class AControllerServices
+ * Classe Abstrata AControllerServices
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Controller 
+ * @subpackage FMW
  *  
  */ 
 abstract class AControllerServices
@@ -20,42 +20,36 @@ abstract class AControllerServices
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Application\Frontcontroller
 	 */
 	protected $front;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Application\Request\Request
 	 */
 	protected $request;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Application
 	 */
 	protected $app;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Router\Router
 	 */
 	protected $router;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Utilities\Net\HTTPClient
 	 */
 	protected $http;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var Doctrine\ORM\EntityManager
 	 */
 	protected $entityManager;
@@ -72,12 +66,10 @@ abstract class AControllerServices
 	 */
 	private $status;
 		
-	/** 
-     * Construtor da classe
-     * @method __construct
-     * @access public     
-     * @return void 
-     */
+	/**
+	 * 
+	 * @param \FMW\Application\Frontcontroller\Frontcontroller $front
+	 */
 	public function __construct( \FMW\Application\Frontcontroller\Frontcontroller $front ) {				
 		
 		/* FrontController */
@@ -108,7 +100,7 @@ abstract class AControllerServices
 	} 
 	
 	/**
-	 *
+	 * 
 	 * @param string $mimetype
 	 */
 	protected function setMIMEType( $mimetype = 'json' ) {
@@ -136,10 +128,9 @@ abstract class AControllerServices
 	}
 	
 	/**
-	 * Debug aplication
+	 * 
 	 */
 	protected function debug() {
-		
 		error_reporting(E_ALL & ~E_NOTICE);
 		ini_set('display_errors', true);
 	}
@@ -200,9 +191,8 @@ abstract class AControllerServices
 	}
 	
 	/**
-	 * 
-	 * Enter description here ...
-	 * @param array $params
+	 * (non-PHPdoc)
+	 * @see \FMW\Controller\IController::errorAction()
 	 */
 	public function errorAction( array $params ) {}
 }

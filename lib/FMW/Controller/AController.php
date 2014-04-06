@@ -7,14 +7,14 @@ use FMW\Application\Frontcontroller\Plugins\Assets,
 
 /** 
  * 
- * Abstract Class AController
+ * Classe Abstrata AController
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Controller 
+ * @subpackage FMW
  *  
  */ 
 abstract class AController 
@@ -23,63 +23,54 @@ abstract class AController
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Application\Frontcontroller
 	 */
 	protected $front;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\View\View
 	 */
 	protected $view;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Application\Request\Request
 	 */
 	protected $request;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Application
 	 */
 	protected $app;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Router\Router
 	 */
 	protected $router;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var FMW\Utilities\Net\HTTPClient
 	 */
 	protected $http;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var Doctrine\ORM\EntityManager
 	 */
 	protected $entityManager;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var array
 	 */
 	protected $meta = array();
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
 	protected $slash = ' :: ';
@@ -90,12 +81,10 @@ abstract class AController
 	 */
 	protected $assets;
 		
-	/** 
-     * Construtor da classe
-     * @method __construct
-     * @access public     
-     * @return void 
-     */
+	/**
+	 * 
+	 * @param \FMW\Application\Frontcontroller\Frontcontroller $front
+	 */
 	public function __construct( \FMW\Application\Frontcontroller\Frontcontroller $front ) {				
 		
 		/* FrontController */
@@ -131,8 +120,6 @@ abstract class AController
 	
 	/**
 	 * 
-	 * Inicializando informações para a View
-	 * return void
 	 */
 	protected function configureView() {
 		
@@ -177,7 +164,7 @@ abstract class AController
 	}
 	
 	/**
-	 * Debug aplication
+	 * 
 	 */
 	public function debug() {
 		error_reporting(E_ALL & ~E_NOTICE);
@@ -204,8 +191,8 @@ abstract class AController
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $value
+	 * @return multitype:
 	 */
 	public function setTitleCh( $value ) {
 		
@@ -220,7 +207,6 @@ abstract class AController
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $direction
 	 */
 	public function setTitleDirectionCh( $direction = 'r' ) {
@@ -253,8 +239,7 @@ abstract class AController
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @param string $defaultSlash
+	 * @param string $slash
 	 */
 	public function formatTitleCh( $slash ) {
 		
@@ -269,7 +254,6 @@ abstract class AController
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 */
 	public function metaAssignCh() {
 		$this->view->meta = $this->meta;
@@ -277,21 +261,20 @@ abstract class AController
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 */
 	public function assetsAssignCh() {
 		$this->view->assets = $this->assets;
 	}
 	
-		/**
+	/**
 	 * (non-PHPdoc)
-	 * @see FMW\Controller.IController::init()
+	 * @see \FMW\Controller\IController::init()
 	 */
 	public function init() {}
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see FMW\Controller.IController::preActionEvent()
+	 * @see \FMW\Controller\IController::preActionEvent()
 	 */
 	public function preActionEvent( array $params ) {}
 	
@@ -330,9 +313,8 @@ abstract class AController
 	}
 	
 	/**
-	 * 
-	 * Enter description here ...
-	 * @param array $params
+	 * (non-PHPdoc)
+	 * @see \FMW\Controller\IController::errorAction()
 	 */
 	public function errorAction( array $params ) {}
 }
