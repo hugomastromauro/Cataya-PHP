@@ -4,14 +4,14 @@ namespace FMW\Utilities\Validation\Form;
 
 /** 
  * 
- * Class Form
+ * Classe Form
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Form 
+ * @subpackage Validation
  *  
  */ 
 class Form 
@@ -20,37 +20,32 @@ class Form
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @access public
 	 * @param string $method
 	 * @param array $params
-	 * @return object
+	 * @return \FMW\Utilities\Validation\Form\Form
 	 */
 	public static function validate( $method, array $params = null ) {
-				
 		return new self( $method, $params );		
 	}
 	
-	/** 
-     * Method that validates select
-     * @access public 
-     * @param string $value
-     * @param string $field    
-     * @param array $params    
-     * @return bool 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @param string $field
+	 * @param string $params
+	 * @return boolean
+	 */
 	public function select($value, $field, $params = NULL) {
 		
 		return $value == 0 ? false : true;
 	}
 	
 	/**
-	 * Method that validates field if another is correct
-	 * @access public
+	 * 
 	 * @param string $value
 	 * @param string $field
-	 * @param array $params
-	 * @return bool
+	 * @param string $params
+	 * @return boolean
 	 */
 	public function requireValidData($value, $field, $params = NULL) {
 		

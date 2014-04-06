@@ -6,14 +6,14 @@ use FMW\Utilities\File\File;
 
 /**
  *
- * Abstract Image
+ * Classe Abstrata AUpload
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Upload
+ * @subpackage Utilities
  *
  */
 abstract class AUpload {
@@ -26,7 +26,7 @@ abstract class AUpload {
 	
 	/**
 	 * 
-	 * @var integer
+	 * @var int
 	 */
 	protected $sizeLimit = 10485760;
 	
@@ -74,8 +74,9 @@ abstract class AUpload {
 	
 	/**
 	 * 
-	 * @param array $allowedExtensions
-	 * @param integer $sizeLimit
+	 * @param string $fileToUpload
+	 * @param array $params
+	 * @throws Exception
 	 */
 	public function __construct($fileToUpload, array $params = array()){
 		
@@ -117,6 +118,7 @@ abstract class AUpload {
 	
 	/**
 	 * 
+	 * @return string
 	 */
 	public function getFileName(){
 		if (isset($this->filename))
@@ -125,6 +127,7 @@ abstract class AUpload {
 	
 	/**
 	 * 
+	 * @return string
 	 */
 	public function getFileExtension() {
 		if (isset($this->filename))
@@ -132,25 +135,26 @@ abstract class AUpload {
 	}
 	
 	/**
-	 * 
+	 * @return string
 	 */
-	public function getUploadName(){
+	public function getUploadName() {
 		if ($this->upload)
 			return $this->upload->getName();
 	}
 	
 	/**
-	 * 
+	 * @return string
 	 */
-	public function getUploadTemp(){
+	public function getUploadTemp() {
 		if ($this->upload)
 			return $this->upload->getTemp();
 	}
 	
 	/**
 	 * 
+	 * @throws Exception
 	 */
-	private function checkServerSettings(){
+	private function checkServerSettings() {
 		
 		$postSize = $this->toBytes(ini_get('post_max_size'));
 		$uploadSize = $this->toBytes(ini_get('upload_max_filesize'));
@@ -164,11 +168,12 @@ abstract class AUpload {
 	/**
 	 * 
 	 * @param string $str
+	 * @return Ambigous <number, string>
 	 */
-	private function toBytes($str){
+	private function toBytes( $string ){
 		
-		$val = trim($str);
-		$last = strtolower($str[strlen($str)-1]);
+		$val = trim($string);
+		$last = strtolower($string[strlen($string)-1]);
 		
 		switch($last) {
 			case 'g': $val *= 1024;
@@ -181,7 +186,7 @@ abstract class AUpload {
 	
 	/**
 	 * 
-	 * @throws Exception
+	 * @return multitype:string
 	 */
 	protected function prepare() {
 		
@@ -228,7 +233,7 @@ abstract class AUpload {
 
 	/**
 	 * 
-	 * @return multitype:string |boolean
+	 * @return multitype:boolean |multitype:string
 	 */
 	public function handleUpload() {
 		

@@ -4,36 +4,34 @@ namespace FMW\Utilities\File;
 
 /** 
  * 
- * Class Util
+ * Classe Util
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package File 
+ * @subpackage Utilities
  *  
  */ 
 class Util 
 	extends \FMW\Object {	
 		
-	/** 
-     * Método que troca barras
-     * @access public 
-     * @param string $value          
-     * @return string 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @return mixed
+	 */
 	public static function rslash( $value ) {
 		
 		return preg_replace('/\\\/', '/', $value);
 	}
 	
-	/** 
-     * Método que remove barras
-     * @access public 
-     * @param string $value          
-     * @return string 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @return string
+	 */
 	public static function removeslash( $value ) {
 		
 		return stripslashes(rtrim(ltrim($value, '/'), '/'));

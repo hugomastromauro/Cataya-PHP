@@ -4,14 +4,14 @@ namespace FMW\Utilities\Validation\Net;
 
 /** 
  * 
- * Class Net
+ * Classe Net
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Net 
+ * @subpackage Validation
  *  
  */ 
 class Net 
@@ -20,25 +20,22 @@ class Net
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @access public
 	 * @param string $method
 	 * @param array $params
-	 * @return object
+	 * @return \FMW\Utilities\Validation\Net\Net
 	 */
 	public static function validate( $method, array $params = null ) {
 				
 		return new self( $method, $params );		
 	}
 	
-	/** 
-     * Method that validates email
-     * @access public 
-     * @param string $value
-     * @param string $field    
-     * @param array $params    
-     * @return bool 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @param string $field
+	 * @param string $params
+	 * @return boolean
+	 */
 	public function email($value, $field, $params = null)
 	{
 		
@@ -51,28 +48,26 @@ class Net
 		return false;
 	}
 	
-	/** 
-     * Method that optimizes url
-     * @access public 
-     * @param string $value
-     * @param string $field    
-     * @param array $params    
-     * @return bool 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @param string $field
+	 * @param string $params
+	 * @return boolean
+	 */
 	public function urlseo($value, $field, $params = NULL)
 	{
 		$this->getValidation()->setData(\FMW\Utilities\String\String::seo($value), $field);
 		return true;
 	}
 	
-	/** 
-     * Method that validates url
-     * @access public 
-     * @param string $value
-     * @param string $field    
-     * @param array $params    
-     * @return bool 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @param string $field
+	 * @param string $params
+	 * @return boolean
+	 */
 	public function url($value, $field, $params = NULL) 
 	{
 		
@@ -85,14 +80,13 @@ class Net
 		return false;
 	}
 	
-	/** 
-     * Method that validates IP
-     * @access public 
-     * @param string $value
-     * @param string $field    
-     * @param array $params    
-     * @return bool 
-     */		
+	/**
+	 * 
+	 * @param string $value
+	 * @param string $field
+	 * @param string $params
+	 * @return boolean
+	 */	
 	public function ip($value, $field, $params = NULL) 
 	{
 		

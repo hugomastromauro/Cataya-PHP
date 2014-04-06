@@ -4,59 +4,69 @@ namespace FMW\Utilities\Image;
 
 /**
  *
- * Class Image
+ * Classw Image
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Image
+ * @subpackage Utilities
  *
  */
 class Image {
 	
 	/**
 	 * 
+	 * @var \FMW\Config
 	 */
-	public function __construct() {
+	private $_config;
+	
+	/**
+	 * 
+	 * @param \FMW\Config $config
+	 */
+	public function __construct( \FMW\Config $config ) {
 		
-		ini_set('memory_limit', '64M');
+		$this->_config = $config;	
 	}
 	
 	/**
 	 * 
-	 * @param array $src
+	 * @param string $src
+	 * @return multitype:
 	 */
-	public function getSize($src) {
-		return getimagesize($src);
+	public function getSize( $src ) {
+		return getimagesize( $src );
 	}
 	
 	/**
-	 *
-	 * @param mixed $image
-	 * @param int $newwidth
+	 * 
+	 * @param string $image
+	 * @param number $newwidth
+	 * @return number
 	 */
 	public function proportion($image, $newwidth) {
 	
 		$src = imagecreatefromjpeg($image);
 	
-		list($width, $height) = getimagesize($image);
+		list( $width, $height ) = getimagesize($image);
 	
 		if ($width < $newwidth)
 			$newwidth = $width;
 	
-		return ($height/$width) * $newwidth;
+		return ( $height / $width ) * $newwidth;
 	}
 	
 	/**
-	 *
+	 * 
 	 * @param string $src
 	 * @param string $dest
-	 * @param int $new_width
-	 * @param int $new_height
+	 * @param number $new_width
+	 * @param number $new_height
 	 * @param int $quality
 	 * @param int $border
+	 * @param string $crop
 	 */
 	public function resize($src, $dest, $new_width, $new_height, $quality, $border, $crop = false) {
 	
@@ -106,9 +116,10 @@ class Image {
 	}
 	
 	/**
-	 *
+	 * 
 	 * @param string $path
-	 * @param bool $user_functions
+	 * @param string $user_functions
+	 * @return boolean
 	 */
 	public function createFromFile($path, $user_functions = false) {
 	
@@ -135,17 +146,17 @@ class Image {
 	}
 	
 	/**
-	 *
+	 * 
 	 * @param string $dst_image
 	 * @param string $src_image
-	 * @param int $dst_x
-	 * @param int $dst_y
-	 * @param int $src_x
-	 * @param int $src_y
-	 * @param int $dst_w
-	 * @param int $dst_h
-	 * @param int $src_w
-	 * @param int $src_h
+	 * @param number $dst_x
+	 * @param number $dst_y
+	 * @param number $src_x
+	 * @param number $src_y
+	 * @param number $dst_w
+	 * @param number $dst_h
+	 * @param number $src_w
+	 * @param number $src_h
 	 * @param int $quality
 	 * @return boolean
 	 */

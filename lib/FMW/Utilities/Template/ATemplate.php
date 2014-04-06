@@ -4,14 +4,14 @@ namespace FMW\Utilities\Template;
 
 /**
  *
- * Abstract Class ATemplate
+ * Classe Abstrata ATemplate
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Template
+ * @subpackage Utilities
  *
  */
 abstract class ATemplate 
@@ -51,7 +51,8 @@ abstract class ATemplate
 	
 	/**
 	 * 
-	 * @param stream $template
+	 * @param string $template
+	 * @return string
 	 */
 	private function run( $template ) {
 		
@@ -95,8 +96,9 @@ abstract class ATemplate
 	}
 	
 	/**
-	 * Método que compila o template antes de ser renderizado
+	 * 
 	 * @param string $template
+	 * @return mixed
 	 */
 	protected function parseBehindTemplate( $template ) {
 		
@@ -108,11 +110,10 @@ abstract class ATemplate
 	}
 	
 	/**
-	 * Método que compila o template depois de ter renderizado
 	 * 
 	 * @param string $template
 	 * @param string $path
-	 * @return Ambigous <string, mixed, unknown>|Ambigous <>|Ambigous <mixed, unknown, string>|mixed
+	 * @return Ambigous <string, mixed>|Ambigous <>|Ambigous <mixed, string>|mixed
 	 */
 	protected function parseAfterTemplate( $template, $path = null ) {
 		
@@ -180,7 +181,7 @@ abstract class ATemplate
 	 * @param string $path
 	 * @param array $params
 	 * @throws Exception
-	 * @return string|Ambigous <\FMW\Utilities\Template\Ambigous, mixed, string, unknown>
+	 * @return string|Ambigous <\FMW\Utilities\Template\Ambigous, mixed, string>
 	 */
 	public function compile( $file, $path = null, array $params = null ) {
 

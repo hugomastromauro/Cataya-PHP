@@ -10,12 +10,11 @@ use FMW\Utilities\Validation\Validation,
  * Classe ControllerContato
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 1.0
- * @copyright GPL © 2010, Hugo Mastromauro.
+ * @version 2.0
+ * @copyright GPL © 2014, catayaphp.com.
  * @access public
- * @package Controllers
- * @subpackage ControllerContato
- * @link(target, link)
+ * @package main
+ * @subpackage controllers
  */
 class ControllerContato
 	extends \CATAYA\Controller\ControllerPagina {

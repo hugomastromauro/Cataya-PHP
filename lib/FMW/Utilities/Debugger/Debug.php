@@ -7,11 +7,11 @@ namespace FMW\Utilities\Debugger;
  * Classe Debug
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, Hugo Mastromauro. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage controllers
+ * @package Debugger 
+ * @subpackage Utilities
  *  
  */ 
 class Debug {

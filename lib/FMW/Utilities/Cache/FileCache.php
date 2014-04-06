@@ -6,14 +6,14 @@ use FMW\Utilities\File\File;
 
 /** 
  * 
- * Classe Cache
+ * Classe FileCache
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Cache 
+ * @subpackage Utilities
  *  
  */ 
 class FileCache 
@@ -21,31 +21,26 @@ class FileCache
 		
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
 	private $_path;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
 	private $_ext;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var \FMW\Utilities\File\File
 	 */
 	private $_file;
 			
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param array $params
-	 * @access public
-	 * 
+	 * @throws Exception
 	 */
 	public function __construct( array $params ) {			
 	
@@ -59,8 +54,8 @@ class FileCache
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $id
+	 * @return boolean
 	 */
     protected function _doContains($id) {
     	    	
@@ -89,7 +84,6 @@ class FileCache
     
     /**
      * 
-     * Enter description here ...
      * @param string $id
      */
     public function _doCacheTime($id) {
@@ -113,8 +107,8 @@ class FileCache
     
     /**
      * 
-     * Enter description here ...
      * @param string $id
+     * @return resource
      */
     public function _doFetch($id) {
     	
@@ -132,10 +126,10 @@ class FileCache
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $id
-	 * @param string $value
+	 * @param mixed $value
 	 * @param int $lifetime
+	 * @return boolean
 	 */
 	protected function _doSave( $id, $value, $lifetime ) {
 		

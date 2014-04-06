@@ -4,25 +4,24 @@ namespace FMW\Utilities\Filters;
 
 /** 
  * 
- * Class Filter
+ * Classe Filter
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Filters 
+ * @subpackage Utilities
  *  
  */ 
 class Filter 
 	extends \FMW\Object {	
 	
-	/** 
-     * Método que previne ataques por injeção de códigos
-     * @access public 
-     * @param string $value          
-     * @return mixed 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @return mixed
+	 */
 	public function sanitize( $value )
 	{	
 		/// TODO: Concluir a sanitização dos dados aqui	

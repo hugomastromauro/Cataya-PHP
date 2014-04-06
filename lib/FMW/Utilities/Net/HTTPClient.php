@@ -4,14 +4,14 @@ namespace FMW\Utilities\Net;
 
 /** 
  * 
- * Class HTTPClient
+ * Classe HTTPClient
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Net 
+ * @subpackage Utilities
  *  
  */ 
 class HTTPClient 
@@ -19,14 +19,12 @@ class HTTPClient
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
 	private $_baseurl;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var array
 	 */
 	private $_headers = array(
@@ -76,8 +74,8 @@ class HTTPClient
 		
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param array $params
+	 * @throws Exception
 	 */
 	public function __construct( array $params ) {
 		
@@ -90,7 +88,6 @@ class HTTPClient
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $value
 	 */
 	public function setHeaderCh( $value ) {
@@ -100,8 +97,8 @@ class HTTPClient
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $value
+	 * @return multitype:
 	 */
 	public function getHeaderCh( $value ) {
 		
@@ -112,9 +109,8 @@ class HTTPClient
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $url
-	 * @param int $time
+	 * @param number $time
 	 */
 	public function refresh( $url, $time = 30 ) {
 		
@@ -126,10 +122,9 @@ class HTTPClient
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $url
 	 * @param array $query
-	 * @param bool $moved
+	 * @param string $moved
 	 */
 	public function redirect( $url, array $query = null, $moved = false ) {
 		
@@ -171,7 +166,7 @@ class HTTPClient
 	/**
 	 * 
 	 * @param string $url
-	 * @return string
+	 * @return Ambigous <\FMW\Utilities\String\mixed, mixed>
 	 */
 	public function seo( $url ) {
 		return \FMW\Utilities\String\String::seo( $url );

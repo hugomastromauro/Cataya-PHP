@@ -5,16 +5,15 @@ namespace FMW\Utilities\XML;
 use SimpleXMLElement;
 
 /**
- *
- *
- * Class Session
+ * 
+ * Classe XML
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package XML
+ * @subpackage Utilities
  *            
  */
 class XML extends \FMW\Object {
@@ -85,15 +84,15 @@ class XML extends \FMW\Object {
 	}
 	
 	/**
-	 *
-	 * @return xml
+	 * 
+	 * @return SimpleXMLElement
 	 */
 	public function getXML() {
 		return $this->xml;
 	}
 	
 	/**
-	 *
+	 * 
 	 * @return string
 	 */
 	public function getCharset() {
@@ -101,8 +100,8 @@ class XML extends \FMW\Object {
 	}
 	
 	/**
-	 *
-	 * @return xml
+	 * 
+	 * @return mixed
 	 */
 	public function getDocumentXML() {
 		return $this->xml->asXML ();
@@ -110,8 +109,7 @@ class XML extends \FMW\Object {
 	
 	/**
 	 * (non-PHPdoc)
-	 * 
-	 * @see FMW.Object::toArray()
+	 * @see \FMW\Object::toArray()
 	 */
 	public function toArray($node) {
 		$occurance = array ();

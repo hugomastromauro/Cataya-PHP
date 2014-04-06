@@ -3,16 +3,14 @@
 namespace controllers\main;
 
 /**
- *
- * Classe ControllerPrincipal
+ * Classe ControllerDefault
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, Hugo Mastromauro.
+ * @version 2.0
+ * @copyright GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
+ * @package main
  * @subpackage controllers
- *
  */
 class ControllerDefault
 	extends \CATAYA\Controller\ControllerPagina {

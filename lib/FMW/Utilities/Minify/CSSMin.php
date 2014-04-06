@@ -2,6 +2,18 @@
 
 namespace FMW\Utilities\Minify;
 
+/**
+ *
+ * Classe CSSMin
+ *
+ * @author Hugo Mastromauro <hugomastromauro@gmail.com>
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
+ * @access public
+ * @package Minify
+ * @subpackage Uitlities
+ *
+ */
 class CSSMin {
 	
 	/**
@@ -39,8 +51,9 @@ class CSSMin {
 	
 	/**
 	 * 
-	 * @param array $cssfiles
-	 */ 
+	 * @param string $cssfiles
+	 * @param \FMW\Config $config
+	 */
 	public function __construct( $cssfiles, $config ) {
 		
 		$input = '';
@@ -57,7 +70,9 @@ class CSSMin {
 	
 	/**
 	 * 
-	 * @param string $stream
+	 * @param resource $stream
+	 * @param string $dir
+	 * @return mixed|string
 	 */
 	protected function checkAndFixDirs( $stream, $dir ) {
 		

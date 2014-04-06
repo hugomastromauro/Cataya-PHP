@@ -8,14 +8,14 @@ use \Memcache;
 
 /** 
  * 
- * Class Cache
+ * Classe MemcacheCache
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Cache 
+ * @subpackage Utilities
  *  
  */ 
 class MemcacheCache 
@@ -35,10 +35,8 @@ class MemcacheCache
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param array $params
-	 * @access public
-	 * 
+	 * @throws Exception
 	 */
 	public function __construct( array $params ) {
 		
@@ -99,7 +97,7 @@ class MemcacheCache
 	/**
 	 * 
 	 * @param string $id
-	 * @param string $value
+	 * @param mixed $value
 	 * @param int $lifetime
 	 */
 	protected function _doSave($id, $value, $lifetime) {

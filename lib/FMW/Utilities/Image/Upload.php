@@ -4,14 +4,14 @@ namespace FMW\Utilities\Image;
 
 /**
  *
- * Class Image
+ * Classe Upload
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Image
+ * @subpackage Utilities
  *
  */
 class Upload 
@@ -98,9 +98,10 @@ class Upload
 
 	/**
 	 * 
+	 * @param string $fileToUpload
 	 * @param array $params
 	 */
-	public function __construct($fileToUpload, array $params = array()) {
+	public function __construct( $fileToUpload, array $params = array() ) {
 		
 		if (isset($params['settings']['sizes']))
 			$this->sizes = $params['settings']['sizes'];
@@ -134,7 +135,7 @@ class Upload
 			$this->height = $params['settings']['height'];
 		}
 		
-		parent::__construct($fileToUpload, $params);
+		parent::__construct( $fileToUpload, $params );
 	}
 	
 	/**

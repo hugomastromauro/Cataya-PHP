@@ -4,14 +4,14 @@ namespace FMW\Utilities\Validation\Number;
 
 /** 
  * 
- * Class Number
+ * Classe Number
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Number 
+ * @subpackage Validation
  *  
  */ 
 class Number 
@@ -20,49 +20,44 @@ class Number
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @access public
 	 * @param string $method
 	 * @param array $params
-	 * @return object
+	 * @return \FMW\Utilities\Validation\Number\Number
 	 */
 	public static function validate( $method, array $params = null ) {
 				
 		return new self( $method, $params );		
 	}
 	
-	/** 
-     * Method that validates numbers
-     * @access public 
-     * @param string $value
-     * @param string $field    
-     * @param array $params    
-     * @return bool 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @param string $field
+	 * @param string $params
+	 * @return boolean
+	 */
 	public function numeric($value, $field, $params = null) {
 		
 		return is_numeric($value) ? true : false;
 	}
 	
 	/**
-	 * Method that validates numbers
-	 * @access public
+	 * 
 	 * @param string $value
 	 * @param string $field
-	 * @param array $params
-	 * @return bool
+	 * @param string $params
+	 * @return boolean
 	 */
 	public function integer($value, $field, $params = null) {
 		return intval($value) ? true : false;
 	}
 	
 	/**
-	 * Method that validates numbers
-	 * @access public
+	 * 
 	 * @param string $value
 	 * @param string $field
-	 * @param array $params
-	 * @return bool
+	 * @param string $params
+	 * @return boolean
 	 */
 	public function number($value, $field, $params = null) {
 		

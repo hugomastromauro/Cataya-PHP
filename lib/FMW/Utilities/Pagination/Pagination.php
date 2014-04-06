@@ -6,14 +6,14 @@ use DoctrineExtensions\Versionable\Exception;
 
 /** 
  * 
- * Class Session
+ * Classe Pagination
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Pagination 
+ * @subpackage Utilities
  *  
  */  
 class Pagination
@@ -35,6 +35,7 @@ class Pagination
 	 * 
 	 * @param array $params
 	 * @throws Exception
+	 * @return string
 	 */
 	static public function create( array $params ) {
 		
@@ -58,6 +59,7 @@ class Pagination
 	/**
 	 * 
 	 * @param array $params
+	 * @return string
 	 */
 	static public function renderHtml( array $params ) {
 		
@@ -134,8 +136,9 @@ class Pagination
 	
 	/**
 	 * 
+	 * @return string
 	 */
-	static function getPages() {
+	static public function getPages() {
 		return self::$pages;
 	}
 }

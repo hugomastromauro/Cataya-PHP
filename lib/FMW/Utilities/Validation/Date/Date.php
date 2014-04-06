@@ -4,14 +4,14 @@ namespace FMW\Utilities\Validation\Date;
 
 /** 
  * 
- * Class Date
+ * Classe Date
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Date 
+ * @subpackage Validation
  *  
  */ 
 class Date 
@@ -20,25 +20,21 @@ class Date
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @access public
 	 * @param string $method
 	 * @param array $params
-	 * @return object
+	 * @return \FMW\Utilities\Validation\Date\Date
 	 */
 	public static function validate( $method, array $params = null ) {
-				
 		return new self( $method, $params );		
 	}
 	
-	/** 
-     * Method that validates the date and time in the format 0000-00-00 00:00:00
-     * @access public 
-     * @param string $value
-     * @param string $field    
-     * @param array $params    
-     * @return bool 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @param string $field
+	 * @param string $params
+	 * @return boolean
+	 */
 	public function datetime($value, $field, $params = NULL)
 	{		
 		if(!preg_match('/^(00|19|20)[0-9]{2}[- \/.](0[0-9]|0[012])[- \/.](0[0-9]|[12][0-9]|3[01]) [0-9]{2}:[0-9]{2}$/', $value))
@@ -48,14 +44,13 @@ class Date
 		return true;	
 	}
 
-	/** 
-     * Method that validates the date 0000-00-00
-     * @access public 
-     * @param string $value
-     * @param string $field    
-     * @param array $params    
-     * @return bool 
-     */
+	/**
+	 * 
+	 * @param string $value
+	 * @param string $field
+	 * @param string $params
+	 * @return boolean
+	 */
 	public function date($value, $field, $params = NULL)
 	{
 		if(!preg_match('/^(00|19|20)[0-9]{2}[- \/.](0[0-9]|0[012])[- \/.](0[0-9]|[12][0-9]|3[01])$/', $value))

@@ -4,42 +4,38 @@ namespace FMW\Utilities\Cache;
 
 /** 
  * 
- * Classe Cache
+ * Interface de Classe ICache
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Cache 
+ * @subpackage Utilities
  *  
  */ 
 Interface ICache {
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $id
 	 */
 	public function fetch($id);
 
     /**
      * 
-     * Enter description here ...
      * @param string $id
      */
     public function contains($id);
     
     /**
      *
-     * Enter description here ...
      * @param string $id
      */
     public function delete($id);
     
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $id
 	 * @param mixed $value
 	 * @param int $lifeTime
@@ -48,7 +44,6 @@ Interface ICache {
 
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $id
 	 */
 	public function cacheTime($id);

@@ -4,14 +4,14 @@ namespace FMW\Utilities\Cache;
 
 /** 
  * 
- * Class Cache
+ * Classe Abstrata Cache
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package Cache 
+ * @subpackage Utilities
  *  
  */ 
 class ACache 
@@ -20,14 +20,12 @@ class ACache
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @var string
 	 */
 	private $_namespace = null;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $namespace
 	 */
 	public function setNamespace( $namespace ) {
@@ -35,8 +33,8 @@ class ACache
 	}
 	
 	/**
-	 *
-	 * Enter description here ...
+	 * 
+	 * @return string
 	 */
 	public function getNamespace() {
 		return $this->_namespace;
@@ -44,7 +42,7 @@ class ACache
     
 	/**
 	 * (non-PHPdoc)
-	 * @see FMW\Utilities\Cache.ICache::fetch()
+	 * @see \FMW\Utilities\Cache\ICache::fetch()
 	 */
     public function fetch($id) {
         return $this->_doFetch($this->_getNamespacedId($id));
@@ -52,7 +50,7 @@ class ACache
 
 	/**
 	 * (non-PHPdoc)
-	 * @see FMW\Utilities\Cache.ICache::contains()
+	 * @see \FMW\Utilities\Cache\ICache::contains()
 	 */
     public function contains($id){
         return $this->_doContains($this->_getNamespacedId($id));
@@ -60,7 +58,7 @@ class ACache
     
     /**
      * (non-PHPdoc)
-     * @see FMW\Utilities\Cache.ICache::delete()
+     * @see \FMW\Utilities\Cache\ICache::delete()
      */
     public function delete($id){
     	return $this->_doDelete($this->_getNamespacedId($id));
@@ -68,7 +66,7 @@ class ACache
 	
     /**
      * (non-PHPdoc)
-     * @see FMW\Utilities\Cache.ICache::save()
+     * @see \FMW\Utilities\Cache\ICache::save()
      */
 	public function save($id, $value, $lifetime = 0) {	
 		return $this->_doSave($this->_getNamespacedId( $id ), $value, $lifetime);
@@ -76,18 +74,17 @@ class ACache
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see FMW\Utilities\Cache.ICache::cacheTime()
+	 * @see \FMW\Utilities\Cache\ICache::cacheTime()
 	 */
 	public function cacheTime($id) {
 		return $this->_doCacheTime($id);
 	}
 	
 	/**
-     * Prefix the passed id with the configured namespace value
-     *
-     * @param string $id  The id to namespace
-     * @return string $id The namespaced id
-     */
+	 * 
+	 * @param string $id
+	 * @return string
+	 */
     private function _getNamespacedId($id) {
         if ( ! $this->_namespace || strpos($id, $this->_namespace) === 0) {
             return $id;

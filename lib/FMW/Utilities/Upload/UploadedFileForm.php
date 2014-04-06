@@ -4,29 +4,29 @@ namespace FMW\Utilities\Upload;
 
 /**
  *
- * Class UploadedFileForm
+ * Classe UploadedFileForm
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Upload
+ * @subpackage Utilities
  *
  */
 class UploadedFileForm {
 	
 	/**
 	 * 
-	 * @var object
+	 * @var array
 	 */
-	private $file;
+	private $_file;
 	
 	/**
 	 * 
 	 * @var array
 	 */
-	private $settings;
+	private $_settings;
 	
 	/**
 	 * 
@@ -35,16 +35,17 @@ class UploadedFileForm {
 	 */
 	public function __construct($file, $settings) {
 		
-		$this->file = $file;
-		$this->settings = $settings;
+		$this->_file = $file;
+		$this->_settings = $settings;
 	}
 	
 	/**
 	 * 
-	 * @param string $path
+	 * @param array $file
+	 * @return boolean
 	 */
 	public function save($file) {
-		if(!move_uploaded_file($this->file['tmp_name'], $file)){
+		if(!move_uploaded_file($this->_file['tmp_name'], $file)){
 			return false;
 		}
 		return true;
@@ -52,22 +53,25 @@ class UploadedFileForm {
 	
 	/**
 	 * 
+	 * @return multitype:
 	 */
 	public function getName() {
-		return $this->file['name'];
-	}
-	
-	/**
-	 *
-	 */
-	public function getTemp() {
-		return $this->file['tmp_name'];
+		return $this->_file['name'];
 	}
 	
 	/**
 	 * 
+	 * @return multitype:
+	 */
+	public function getTemp() {
+		return $this->_file['tmp_name'];
+	}
+	
+	/**
+	 * 
+	 * @return multitype:
 	 */
 	public function getSize() {
-		return $this->file['size'];
+		return $this->_file['size'];
 	}
 }

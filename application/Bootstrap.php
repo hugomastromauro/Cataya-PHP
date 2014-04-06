@@ -9,11 +9,11 @@ use Doctrine\ORM\EntityManager,
  * Classe Bootstrap
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package controllers
- * @subpackage appication
+ * @package Application
+ * @subpackage FMW
  *
  */
 class Bootstrap
@@ -26,9 +26,7 @@ class Bootstrap
 	protected $em;
 	
 	/**
-	 * Método que inicializa mensagens do sistema
-	 * @access public
-	 * @return void
+	 * 
 	 */
 	public function initErrors() {
 		
@@ -42,9 +40,7 @@ class Bootstrap
 	}
 	
 	/**
-	 * Método de configurações do servidor
-	 * @access public
-	 * @return void
+	 * 
 	 */
 	public function initSettings() {
 		
@@ -54,18 +50,14 @@ class Bootstrap
 	}
 
 	/**
-	 * Método que inicializa a internacionalização
-	 * @access public
-	 * @return void
+	 * 
 	 */
 	public function initTimeZone() {
 		date_default_timezone_set('America/Sao_Paulo');
 	}
 
 	/**
-	 * Método que inicializa rotas
-	 * @access public
-	 * @return void
+	 * 
 	 */
 	public function initRoutes() {
 
@@ -80,9 +72,7 @@ class Bootstrap
 	}
 
 	/**
-	 * Método que inicializa as bibliotecas
-	 * @access public
-	 * @return void
+	 * 
 	 */
 	public function initExtraLibraries() {
 		
@@ -91,9 +81,8 @@ class Bootstrap
 	}
 
 	/**
-	 * Método que inicializa a biblioteca Doctrine
-	 * @access public
-	 * @return void
+	 * 
+	 * @return \Doctrine\ORM\EntityManager
 	 */
 	public function initDoctrine() {
 

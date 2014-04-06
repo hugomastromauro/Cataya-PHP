@@ -2,6 +2,18 @@
 
 namespace CATAYA\ORM;
 
+/**
+ *
+ * Interface de Classe IEntityRepository
+ *
+ * @author Hugo Mastromauro <hugomastromauro@gmail.com>
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
+ * @access public
+ * @package ORM
+ * @subpackage CATAYA
+ *
+ */
 interface IEntityRepository
 {
 	/**

@@ -4,15 +4,14 @@ namespace controllers\services;
 
 /**
  *
- * Classe ControllerCidades
+ * Classe ControllerDefault
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, Hugo Mastromauro.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
+ * @package services
  * @subpackage controllers
- *
  */
 class ControllerDefault
 	extends \CATAYA\Controller\ControllerServices {
@@ -30,8 +29,5 @@ class ControllerDefault
 	 * (non-PHPdoc)
 	 * @see \CATAYA\Controller\ControllerServices::getAction()
 	 */
-	public function getAction( array $params ) {
-		
-		
-	}
+	public function getAction( array $params ) {}
 }

@@ -4,22 +4,21 @@ namespace FMW\Utilities\Session;
 
 /**
  *
- * Class Session
+ * Classe Session
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Session
+ * @subpackage Utilities
  *
  */
 class Session
 	extends \FMW\Object {
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @param array $params
 	 */
 	public function __construct( array $params = null ) {
@@ -36,7 +35,7 @@ class Session
 	
 	/**
 	 * (non-PHPdoc)
-	 * @see FMW.Object::set()
+	 * @see \FMW\Object::set()
 	 */
 	public function set($name, &$value) {
 	
@@ -47,8 +46,7 @@ class Session
 	}
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @param string $name
 	 */
 	public function remove($name) {
@@ -67,8 +65,7 @@ class Session
 	}
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 */
 	public function destruct() {
 		$this->_data = null;
@@ -76,8 +73,7 @@ class Session
 	}
 
 	/**
-	 *
-	 * Enter description here ...
+	 * 
 	 * @param array $params
 	 */
 	private function sessionStart( array $params = null ) {

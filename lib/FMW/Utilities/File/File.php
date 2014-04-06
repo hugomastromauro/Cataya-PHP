@@ -6,14 +6,14 @@ use FMW\Utilities\File\Util;
 
 /** 
  * 
- * Class Util
+ * Classe File
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1 
- * @copyright  GPL © 2010, hugomastromauro.com. 
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com. 
  * @access public  
- * @package FMW 
- * @subpackage lib
+ * @package File 
+ * @subpackage Utilities
  *  
  */ 
 class File 
@@ -21,16 +21,16 @@ class File
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @var string
+	 * @var resource
 	 */
 	private $_file;
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $filename
+	 * @param string $create
 	 * @throws Exception
+	 * @return \FMW\Utilities\File\File
 	 */
 	public function open( $filename, $create = false ) {
 		
@@ -46,8 +46,8 @@ class File
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @param bool $filename
+	 * @param string $filename
+	 * @return boolean
 	 */
 	public function exists( $filename ) {
 		
@@ -59,9 +59,10 @@ class File
 
 	/**
 	 * 
-	 * Enter description here ...
 	 * @param string $filename
 	 * @param string $permission
+	 * @throws Exception
+	 * @return \FMW\Utilities\File\File
 	 */
 	public function create( $filename, $permission = 'w+' ) {
 		
@@ -75,8 +76,8 @@ class File
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @param string $stream
+	 * @param resource $stream
+	 * @return resource
 	 */
 	public function writeCh( $stream ) {
 
@@ -90,7 +91,9 @@ class File
 	}
 	
 	/**
-	 *
+	 * 
+	 * @param string $dir
+	 * @throws Exception
 	 */
 	public function createDirectory($dir) {
 	
@@ -103,7 +106,7 @@ class File
 	
 	/**
 	 * 
-	 * Enter description here ...
+	 * @return string
 	 */
 	public function getContent() {
 		
@@ -116,8 +119,7 @@ class File
 	
 	/**
 	 * 
-	 * Enter description here ...
-	 * @param mixed $permission
+	 * @param string $permission
 	 */
 	public function changePermission( $permission ) {
 		chmod( $this->_file, $permission );
@@ -125,9 +127,10 @@ class File
 	
 	/**
 	 * 
-	 * @param unknown_type $dir
+	 * @param string $dir
+	 * @return boolean
 	 */
-	public function rmdir($dir) {
+	public function rmdir( $dir ) {
 		
 		foreach(glob($dir . '/*') as $file) {
 			if(is_dir($file))
@@ -142,16 +145,16 @@ class File
 	
 	/**
 	 * 
-	 * Enter description here ...
+	 * @return number
 	 */
 	public function permission() {
 		
-		return fileperms($this->_file);
+		return fileperms( $this->_file );
 	}
 	
 	/**
 	 * 
-	 * Enter description here ...
+	 * @return string
 	 */
 	public static function getDocumentRoot() {
 		
@@ -161,6 +164,7 @@ class File
 	/**
 	 * 
 	 * @param string $module
+	 * @return string
 	 */
 	public static function getDocumentAsset( $module ) {
 
@@ -169,7 +173,6 @@ class File
 	
 	/**
 	 * 
-	 * Enter description here ...
 	 */
 	public function close() {
 		fclose($this->_file);

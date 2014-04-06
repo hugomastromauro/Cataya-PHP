@@ -4,39 +4,39 @@ namespace FMW\Utilities\Upload;
 
 /**
  *
- * Class UploadedFileXhr
+ * Classe UploadedFileXhr
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
- * @version 0.1
- * @copyright  GPL © 2010, hugomastromauro.com.
+ * @version 2.0
+ * @copyright  GPL © 2014, catayaphp.com.
  * @access public
- * @package FMW
- * @subpackage lib
+ * @package Upload
+ * @subpackage Utilities
  *
  */
 class UploadedFileXhr {
 	
 	/**
 	 *
-	 * @var object
+	 * @var array
 	 */
-	private $file;
+	private $_file;
 	
 	/**
 	 *
 	 * @var array
 	 */
-	private $settings;
+	private $_settings;
 	
 	/**
 	 *
-	 * @param object $file
+	 * @param array $file
 	 * @param array $settings
 	 */
 	public function __construct($file, $settings) {
 	
-		$this->file = $file;
-		$this->settings = $settings;
+		$this->_file = $file;
+		$this->_settings = $settings;
 	}	
 	
 	/**
@@ -66,10 +66,10 @@ class UploadedFileXhr {
 	
 	/**
 	 * 
-	 * @return object
+	 * @return multitype:
 	 */
 	public function getName() {
-		return $this->file;
+		return $this->_file;
 	}
 	
 	/**
