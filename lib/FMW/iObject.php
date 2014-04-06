@@ -4,7 +4,7 @@ namespace FMW;
 
 /**
  *
- * Interface iObject
+ * Interface de Classe iObject
  *
  * @author Hugo Mastromauro <hugomastromauro@gmail.com>
  * @version 2.0

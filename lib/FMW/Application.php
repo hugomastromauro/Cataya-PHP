@@ -18,30 +18,26 @@ class Application {
 
 	/**
 	 *
-	 * Enter description here ...
 	 * @var FMW\Config
 	 */
 	private $_config;
 
 	/**
 	 *
-	 * Enter description here ...
 	 * @var FMW\Application\Bootstrap\Abstract
 	 */
 	private $_bootstrap;
 
 	/**
 	 *
-	 * Instâncias de objetos retornados pelo eventDispatch
 	 * @var array
 	 */
 	private $_objects = array();
 
 	/**
-     * Construtor da classe
-     * @access public
-     * @return void
-     */
+	 * 
+	 * @throws \Exception
+	 */
 	public function __construct() {
 		
 		$config = '';
@@ -71,9 +67,7 @@ class Application {
 	}
 
 	/**
-	 * Método que instância o bootstrap atual
 	 * 
-	 * @access public
 	 * @return \FMW\FMW\Application\Bootstrap\Abstract
 	 */
 	public function bootstrap() {
@@ -96,9 +90,7 @@ class Application {
 	}
 
 	/**
-	 * Método que verifica se a aplicação está rodando em ambiente linux ou não
 	 * 
-	 * @access public 
 	 * @return boolean
 	 */
 	public function isApache() {
@@ -111,19 +103,15 @@ class Application {
 	}
 
 	/**
-	 * Método que retorna as configurações
 	 * 
-	 * @access public
-	 * @return FMW_Config
+	 * @return \FMW\FMW\Config
 	 */
 	public function getConfig() {
 		return $this ->_config;
 	}
 	
 	/**
-	 * Método que retorna o bootstrap da aplicação
 	 * 
-	 * @access public
 	 * @return \FMW\FMW\Application\Bootstrap\Abstract
 	 */
 	public function getBootstrap() {
